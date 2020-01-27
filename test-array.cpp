@@ -266,7 +266,7 @@ void testArrayObjectIsEmpty() {
 }
 
 
-void arrayObjectArray() {
+void testObjectArray() {
 	testArrayObjectConstructor();
 	testArrayObjectLen();
 	testArrayObjectEqualArray();
@@ -545,7 +545,7 @@ void testArrayIntegerIsEmpty() {
 }
 
 
-void arrayIntegerArray() {
+void testIntegerArray() {
 	testArrayIntegerConstructor();
 	testArrayIntegerLen();
 	testArrayIntegerEqualArray();
@@ -1102,7 +1102,7 @@ void testArrayBoolIsEmpty() {
 }
 
 
-void arrayBoolArray() {
+void testBoolArray() {
 	testArrayBoolConstructor();
 	testArrayBoolLen();
 	testArrayBoolEqualArray();
@@ -1353,7 +1353,7 @@ void testArrayStringIsEmpty() {
 }
 
 
-void arrayStringArray() {
+void testStrArray() {
 	testArrayStringConstructor();
 	testArrayStringLen();
 	testArrayStringEqualArray();
