@@ -98,6 +98,17 @@ class Array : public Object {
 
 
 		/**
+		 * Set the element of the array at the given index 
+		 * with the given element.
+		 *
+		 * @param i insertion index
+		 * @param element the element to be inserted at the given index
+		 */
+		virtual void set(size_t i, Object* element) {
+		}
+
+
+		/**
 		 * Function to remove the element at index and shift remaining elements to the left,
 		 * decreasing the array size by 1.
 		 * 
@@ -229,6 +240,17 @@ class IntArray : public Object {
 		 * @param element new element of the array at the given index
 		 */
 		virtual void insert(size_t i, int* element) {
+		}
+
+
+		/**
+		 * Set the element of the array at the given index 
+		 * with the given element.
+		 *
+		 * @param i insertion index
+		 * @param element the element to be inserted at the given index
+		 */
+		virtual void set(size_t i, int* element) {
 		}
 
 
@@ -368,6 +390,17 @@ class BoolArray : public Object {
 
 
 		/**
+		 * Set the element of the array at the given index 
+		 * with the given element.
+		 *
+		 * @param i insertion index
+		 * @param element the element to be inserted at the given index
+		 */
+		virtual void set(size_t i, bool* element) {
+		}
+
+
+		/**
 		 * Function to remove the element at index and shift remaining elements to the left,
 		 * decreasing the array size by 1.
 		 * 
@@ -503,6 +536,17 @@ class FloatArray : public Object {
 
 
 		/**
+		 * Set the element of the array at the given index 
+		 * with the given element.
+		 *
+		 * @param i insertion index
+		 * @param element the element to be inserted at the given index
+		 */
+		virtual void set(size_t i, float* element) {
+		}
+
+
+		/**
 		 * Function to remove the element at index and shift remaining elements to the left,
 		 * decreasing the array size by 1.
 		 * 
@@ -629,6 +673,17 @@ class StrArray : public Array {
 		 * @param element new element of the array at the given index
 		 */
 		virtual void insert(size_t i, String* element) {
+		}
+
+
+		/**
+		 * Set the element of the array at the given index 
+		 * with the given element.
+		 *
+		 * @param i insertion index
+		 * @param element the element to be inserted at the given index
+		 */
+		virtual void set(size_t i, String* element) {
 		}
 
 
