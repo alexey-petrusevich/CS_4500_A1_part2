@@ -16,8 +16,6 @@
  */
 class Array : public Object {
 	public:
-		Object* array;
-		size_t size;
 
 
 		/**
@@ -162,8 +160,6 @@ class Array : public Object {
  */
 class IntArray : public Object {
 	public:
-		int* array;
-		size_t size;
 
 
 		/**
@@ -308,8 +304,6 @@ class IntArray : public Object {
  */
 class BoolArray : public Object {
 	public:
-		bool* array;
-		size_t size;
 		
 
 		/**
@@ -454,8 +448,6 @@ class BoolArray : public Object {
  */
 class FloatArray : public Object {
 	public:
-		float* array;
-		size_t size;
 
 
 		/**
