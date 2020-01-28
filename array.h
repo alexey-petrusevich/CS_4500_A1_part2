@@ -16,7 +16,7 @@
  */
 class Array : public Object {
 	public:
-		Object** array;
+		Object* array;
 		size_t size;
 
 
@@ -51,7 +51,7 @@ class Array : public Object {
 		 * @param arr2 the second array
 		 * @return true if this array is equal to the given array and false otherwise
 		 */
-		virtual bool equalArray(Object** arr2) {
+		virtual bool equalArray(Object* arr2) {
 		}
 
 
@@ -61,7 +61,7 @@ class Array : public Object {
 		 * @param i the index of the element
 		 * @return the element of the array at the given index 
 		 */
-		virtual Object* elementAt(size_t i) {
+		virtual Object elementAt(size_t i) {
 		}
 
 
@@ -71,7 +71,7 @@ class Array : public Object {
 		 * @param element the object being search for
 		 * @return the index of the array or >size() if element not found
 		 */
-		virtual size_t indexOf(Object* element) {
+		virtual size_t indexOf(Object element) {
 		}
 
 
@@ -82,7 +82,7 @@ class Array : public Object {
 		 * @param element the element the element at index i is being replaced with
 		 * 
 		 */
-		virtual void replace(size_t i, Object* element){
+		virtual void replace(size_t i, Object element){
 		}
 
 
@@ -93,7 +93,7 @@ class Array : public Object {
 		 * @param i insertion index
 		 * @param element new element of the array at the given index
 		 */
-		virtual void insert(size_t i, Object* element) {
+		virtual void insert(size_t i, Object element) {
 		}
 
 
@@ -104,7 +104,7 @@ class Array : public Object {
 		 * @param i insertion index
 		 * @param element the element to be inserted at the given index
 		 */
-		virtual void set(size_t i, Object* element) {
+		virtual void set(size_t i, Object element) {
 		}
 
 
@@ -115,7 +115,7 @@ class Array : public Object {
 		 * @param i index of the element being removed
 		 * @return the object at the given index
 		 */
-		virtual Object* remove(size_t i) {
+		virtual Object remove(size_t i) {
 		}
 
 
@@ -125,7 +125,7 @@ class Array : public Object {
 		 * @param index the index of the element
 		 * @return the element of the array at the given index
 		 */
-		virtual Object* get(size_t index) {
+		virtual Object get(size_t index) {
 		}
 
 
@@ -136,7 +136,7 @@ class Array : public Object {
 		 * @param i - index
 		 * @return Array 1 (the first one)
 		 */
-		virtual Object** split(size_t i) {
+		virtual Object* split(size_t i) {
 		}
 
 
@@ -162,7 +162,7 @@ class Array : public Object {
  */
 class IntArray : public Object {
 	public:
-		int** array;
+		int* array;
 		size_t size;
 
 
@@ -197,7 +197,7 @@ class IntArray : public Object {
 		 * @param arr2 the second array
 		 * @return true if this array is equal to the given array and false otherwise
 		 */
-		virtual bool equalArray(int** arr2) {
+		virtual bool equalArray(int* arr2) {
 		}
 
 
@@ -207,7 +207,7 @@ class IntArray : public Object {
 		 * @param i the index of the element
 		 * @return the element of the array at the given index 
 		 */
-		virtual int* elementAt(size_t i) {
+		virtual int elementAt(size_t i) {
 		}
 
 
@@ -217,7 +217,7 @@ class IntArray : public Object {
 		 * @param element the object being search for
 		 * @return the index of the array or >size() if element not found
 		 */
-		virtual size_t indexOf(int* element) {
+		virtual size_t indexOf(int element) {
 		}
 
 
@@ -228,7 +228,7 @@ class IntArray : public Object {
 		 * @param element the element the element at index i is being replaced with
 		 * 
 		 */
-		virtual void replace(size_t i, int* element){
+		virtual void replace(size_t i, int element){
 		}
 
 
@@ -239,7 +239,7 @@ class IntArray : public Object {
 		 * @param i insertion index
 		 * @param element new element of the array at the given index
 		 */
-		virtual void insert(size_t i, int* element) {
+		virtual void insert(size_t i, int element) {
 		}
 
 
@@ -250,7 +250,7 @@ class IntArray : public Object {
 		 * @param i insertion index
 		 * @param element the element to be inserted at the given index
 		 */
-		virtual void set(size_t i, int* element) {
+		virtual void set(size_t i, int element) {
 		}
 
 
@@ -261,7 +261,7 @@ class IntArray : public Object {
 		 * @param i index of the element being removed
 		 * @return the element at the given index
 		 */
-		virtual int* remove(size_t i) {
+		virtual int remove(size_t i) {
 		}
 
 
@@ -271,7 +271,7 @@ class IntArray : public Object {
 		 * @param index the index of the element
 		 * @return the element of the array at the given index
 		 */
-		virtual int* get(size_t index) {
+		virtual int get(size_t index) {
 		}
 
 
@@ -282,7 +282,7 @@ class IntArray : public Object {
 		 * @param i index
 		 * @return Array 1 (the first one)
 		 */
-		virtual int** split(size_t i) {
+		virtual int* split(size_t i) {
 		}
 
 
@@ -308,7 +308,7 @@ class IntArray : public Object {
  */
 class BoolArray : public Object {
 	public:
-		bool** array;
+		bool* array;
 		size_t size;
 		
 
@@ -343,7 +343,7 @@ class BoolArray : public Object {
 		 * @param arr2 the second array
 		 * @return true if this array is equal to the given array and false otherwise
 		 */
-		virtual bool equalArray(bool** arr2) {
+		virtual bool equalArray(bool* arr2) {
 		}
 
 
@@ -353,7 +353,7 @@ class BoolArray : public Object {
 		 * @param i the index of the element
 		 * @return the element of the array at the given index 
 		 */
-		virtual bool* elementAt(size_t i) {
+		virtual bool elementAt(size_t i) {
 		}
 
 
@@ -363,7 +363,7 @@ class BoolArray : public Object {
 		 * @param element the object being search for
 		 * @return the index of the array or >size() if element not found
 		 */
-		virtual size_t indexOf(bool* element) {
+		virtual size_t indexOf(bool element) {
 		}
 
 
@@ -374,7 +374,7 @@ class BoolArray : public Object {
 		 * @param element the element the element at index i is being replaced with
 		 * 
 		 */
-		virtual void replace(size_t i, bool* element){
+		virtual void replace(size_t i, bool element){
 		}
 
 
@@ -385,7 +385,7 @@ class BoolArray : public Object {
 		 * @param i insertion index
 		 * @param element new element of the array at the given index
 		 */
-		virtual void insert(size_t i, bool* element) {
+		virtual void insert(size_t i, bool element) {
 		}
 
 
@@ -396,7 +396,7 @@ class BoolArray : public Object {
 		 * @param i insertion index
 		 * @param element the element to be inserted at the given index
 		 */
-		virtual void set(size_t i, bool* element) {
+		virtual void set(size_t i, bool element) {
 		}
 
 
@@ -407,7 +407,7 @@ class BoolArray : public Object {
 		 * @param i index of the element being removed
 		 * @return the element at the given index
 		 */
-		virtual bool* remove(size_t i) {
+		virtual bool remove(size_t i) {
 		}
 
 
@@ -417,7 +417,7 @@ class BoolArray : public Object {
 		 * @param index the index of the element
 		 * @return the element of the array at the given index
 		 */
-		virtual bool* get(size_t index) {
+		virtual bool get(size_t index) {
 		}
 
 
@@ -428,7 +428,7 @@ class BoolArray : public Object {
 		 * @param i index
 		 * @return Array 1 (the first one)
 		 */
-		virtual bool** split(size_t i) {
+		virtual bool* split(size_t i) {
 		}
 
 
@@ -454,7 +454,7 @@ class BoolArray : public Object {
  */
 class FloatArray : public Object {
 	public:
-		float** array;
+		float* array;
 		size_t size;
 
 
@@ -489,7 +489,7 @@ class FloatArray : public Object {
 		 * @param arr2 the second array
 		 * @return true if this array is equal to the given array and false otherwise
 		 */
-		virtual bool equalArray(float** arr2) {
+		virtual bool equalArray(float* arr2) {
 		}
 
 
@@ -499,7 +499,7 @@ class FloatArray : public Object {
 		 * @param i the index of the element
 		 * @return the element of the array at the given index 
 		 */
-		virtual float* elementAt(size_t i) {
+		virtual float elementAt(size_t i) {
 		}
 
 
@@ -509,7 +509,7 @@ class FloatArray : public Object {
 		 * @param element the object being search for
 		 * @return the index of the array or >size() if element not found
 		 */
-		virtual size_t indexOf(float* element) {
+		virtual size_t indexOf(float element) {
 		}
 
 
@@ -520,7 +520,7 @@ class FloatArray : public Object {
 		 * @param element the element the element at index i is being replaced with
 		 * 
 		 */
-		virtual void replace(size_t i, float* element){
+		virtual void replace(size_t i, float element){
 		}
 
 
@@ -531,7 +531,7 @@ class FloatArray : public Object {
 		 * @param i insertion index
 		 * @param element new element of the array at the given index
 		 */
-		virtual void insert(size_t i, float* element) {
+		virtual void insert(size_t i, float element) {
 		}
 
 
@@ -542,7 +542,7 @@ class FloatArray : public Object {
 		 * @param i insertion index
 		 * @param element the element to be inserted at the given index
 		 */
-		virtual void set(size_t i, float* element) {
+		virtual void set(size_t i, float element) {
 		}
 
 
@@ -553,7 +553,7 @@ class FloatArray : public Object {
 		 * @param i index of the element being removed
 		 * @return the element at the given index
 		 */
-		virtual float* remove(size_t i) {
+		virtual float remove(size_t i) {
 		}
 
 
@@ -563,7 +563,7 @@ class FloatArray : public Object {
 		 * @param index the index of the element
 		 * @return the element of the array at the given index
 		 */
-		virtual float* get(size_t index) {
+		virtual float get(size_t index) {
 		}
 
 
@@ -574,7 +574,7 @@ class FloatArray : public Object {
 		 * @param i index
 		 * @return Array 1 (the first one)
 		 */
-		virtual float** split(size_t i) {
+		virtual float* split(size_t i) {
 		}
 
 
@@ -630,7 +630,7 @@ class StrArray : public Array {
 		 * @param arr2 the second array
 		 * @return true if this array is equal to the given array and false otherwise
 		 */
-		virtual bool equalArray(String** arr2) {
+		virtual bool equalArray(String* arr2) {
 		}
 
 
@@ -640,7 +640,7 @@ class StrArray : public Array {
 		 * @param i the index of the element
 		 * @return the element of the array at the given index 
 		 */
-		virtual String* elementAt(size_t i) {
+		virtual String elementAt(size_t i) {
 		}
 
 
@@ -650,7 +650,7 @@ class StrArray : public Array {
 		 * @param element the object being search for
 		 * @return the index of the array or >size() if element not found
 		 */
-		virtual size_t indexOf(String* element) {
+		virtual size_t indexOf(String element) {
 		}
 
 
@@ -661,7 +661,7 @@ class StrArray : public Array {
 		 * @param element the element the element at index i is being replaced with
 		 * 
 		 */
-		virtual void replace(size_t i, String* element){
+		virtual void replace(size_t i, String element){
 		}
 
 
@@ -672,7 +672,7 @@ class StrArray : public Array {
 		 * @param i insertion index
 		 * @param element new element of the array at the given index
 		 */
-		virtual void insert(size_t i, String* element) {
+		virtual void insert(size_t i, String element) {
 		}
 
 
@@ -683,7 +683,7 @@ class StrArray : public Array {
 		 * @param i insertion index
 		 * @param element the element to be inserted at the given index
 		 */
-		virtual void set(size_t i, String* element) {
+		virtual void set(size_t i, String element) {
 		}
 
 
@@ -694,7 +694,7 @@ class StrArray : public Array {
 		 * @param i index of the element being removed
 		 * @return the element at the given index
 		 */
-		virtual String* remove(size_t i) {
+		virtual String remove(size_t i) {
 		}
 
 
@@ -704,7 +704,7 @@ class StrArray : public Array {
 		 * @param index the index of the element
 		 * @return the element of the array at the given index
 		 */
-		virtual String* get(size_t index) {
+		virtual String get(size_t index) {
 		}
 
 
@@ -715,7 +715,7 @@ class StrArray : public Array {
 		 * @param i index
 		 * @return Array 1 (the first one)
 		 */
-		virtual String** split(size_t i) {
+		virtual String* split(size_t i) {
 		}
 
 
