@@ -589,7 +589,7 @@ class FloatArray : public Object {
 /**
  * Represents an array of Strings.
  */
-class StrArray : public Array {
+class StrArray : public Object {
 	public:
 		/**
 		 * Default constructor of this array.
