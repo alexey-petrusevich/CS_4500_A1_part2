@@ -35,190 +35,235 @@ void t_false(bool p) {
  * OBJECT
  */
 void testArrayObjectConstructor() {
-	Array array1 = Array();
-	Array array2 = Array(5000);
+	Array* array1 = new Array();
+	Array* array2 = new Array(5000);
+	delete array1;
+	delete array2;
 	OK("arrayObject constructor()");
 }
 
 
 void testArrayObjectLen() {
-	Array array1 = Array(100);
-	Object o = Object();
-	t_true(arrar1.len() == 0);
-	array1.set(0, o);
-	t_true(array1.len() == 1;
+	Array* array1 = new Array(1);
+	t_true(array1->len() == 0);
+	Object* o = new Object();
+	array1->set(0, o);
+	t_true(array1->len() == 1);
+	delete o;
+	delete array1;
+	delete array2;
 	OK("arrayObject len()");
 }
 
 
 void testArrayObjectEqualArray() {
-	Array array1 = Array(10);
-	Array array2 = Array(10);
-	Object element1 = Object();
-	Object element2 = Object();
-	t_true(array1.equalArray(array2));
-	t_true(array2.equalArray(array1));
-	array1.set(0, element1);
-	t_false(array1.equalArray(array2));
-	t_false(array2.equalArary(array1));
-	array2.set(0, element1);
-	t_true(array1.equalArray(array2));
-	t_true(array2.equalArray(array1));
-	array2.set(1, element2);
-	t_false(array1.equalArray(array2));
-	t_false(array2.equalArary(array1));
-	array1.set(1, element2);
-	t_true(array1.equalArray(array2));
-	t_true(array2.equalArray(array1));
+	Array* array1 = new Array(10);
+	Array* array2 = new Array(10);
+	Object* element1 = new Object();
+	Object* element2 = new Object();
+	t_true(array1->equalArray(array2));
+	t_true(array2->equalArray(array1));
+	array1->set(0, element1);
+	t_false(array1->equalArray(array2));
+	t_false(array2->equalArary(array1));
+	array2->set(0, element1);
+	t_true(array1->equalArray(array2));
+	t_true(array2->equalArray(array1));
+	array2->set(1, element2);
+	t_false(array1->equalArray(array2));
+	t_false(array2->equalArary(array1));
+	array1->set(1, element2);
+	t_true(array1->equalArray(array2));
+	t_true(array2->equalArray(array1));
+	delete array1;
+	delete array2;
+	delete element1;
+	delete element2;
 	OK("arrayObject equalArray()");
 }
 
 
 void testArrayObjectElementAt() {
-	Array array1 = Array(10);
-	Object element1 = Object();
-	Object element2 = Object();
-	array1.set(0, element1);
-	array1.set(2, element2);
-	t_true(array1.get(0).equals(element1));
-	t_true(array1.get(2).equals(element2));
+	Array* array1 = new Array(10);
+	Object* element1 = new Object();
+	Object* element2 = new Object();
+	array1->set(0, element1);
+	array1->set(2, element2);
+	t_true(array1->get(0)->equals(element1));
+	t_true(array1->get(2)->equals(element2));
+	delete array1;
+	delete element1;
+	delete element2;
 	OK("arrayObject elementAt()");
 }
 
 
 void testArrayObjectIndexOf() {
-	Array array1 = Array(10);
-	Object element1 = Object();
-	Object element2 = Object();
-	Object element3 = Object();
-	array1.set(0, element1);
-	array1.set(2, element2);
-	t_true(array1.indexOf(element1) == 0);
-	t_true(array1.indexOf(element2) == 2);
-	t_true(array1.indexOf(element3) > 10);
+	Array* array1 = new Array(10);
+	Object* element1 = new Object();
+	Object* element2 = new Object();
+	Object* element3 = new Object();
+	array1->set(0, element1);
+	array1->set(2, element2);
+	t_true(array1->indexOf(element1) == 0);
+	t_true(array1->indexOf(element2) == 2);
+	t_true(array1->indexOf(element3) > 10);
+	delete array1;
+	delete element1;
+	delete element2;
+	delete element3;
 	OK("arrayObject indexOf()");
 }
 
 
 void testArrayObjectReplace() {
-	Array array1 = Array(10);
-	Object element1 = Object();
-	Object element2 = Object();
-	Object element3 = Object();
-	array1.set(0, element1);
-	array1.set(1, element2);
-	array1.replace(0, element3);
-	t_false(array1.get(0).equals(element1));
-	t_true(array1.get(0).equals(element3));
-	array1.replace(2, element1);
-	t_true(array1.get(2).equals(element1));
+	Array* array1 = new Array(10);
+	Object* element1 = new Object();
+	Object* element2 = new Object();
+	Object* element3 = new Object();
+	array1->set(0, element1);
+	array1->set(1, element2);
+	array1->replace(0, element3);
+	t_false(array1->get(0)->equals(element1));
+	t_true(array1->get(0)->equals(element3));
+	array1->replace(2, element1);
+	t_true(array1->get(2)->equals(element1));
+	delete array1;
+	delete element1;
+	delete element2;
+	delete element3;
 	OK("arrayObject replace()");
 }
 
 
 void testArrayObjectInsert() {
-	Array array1 = Array(10);
-	Object element1 = Object();
-	Object element2 = Object();
-	Object element3 = Object();
-	Object element4 = Object();
-	array1.set(0, element1);
-	array1.set(1, element2);
-	array1.insert(0, element3);
-	t_true(array1.get(0).equals(element3));
-	t_true(array1.get(1).equals(element1));
-	t_true(array1.get(2).equals(element2));
-	array1.insert(2, element4);
-	t_true(array1.get(0).equals(element3));
-	t_true(array1.get(1).equals(element1));
-	t_true(array1.get(2).equals(element4));
-	t_true(array1.get(3).equals(element2));
+	Array* array1 = new Array(10);
+	Object* element1 = new Object();
+	Object* element2 = new Object();
+	Object* element3 = new Object();
+	Object* element4 = new Object();
+	array1->set(0, element1);
+	array1->set(1, element2);
+	array1->insert(0, element3);
+	t_true(array1->get(0)->equals(element3));
+	t_true(array1->get(1)->equals(element1));
+	t_true(array1->get(2)->equals(element2));
+	array1->insert(2, element4);
+	t_true(array1->get(0)->equals(element3));
+	t_true(array1->get(1)->equals(element1));
+	t_true(array1->get(2)->equals(element4));
+	t_true(array1->get(3)->equals(element2));
+	delete array1;
+	delete element1;
+	delete element2;
+	delete element3;
+	delete element4;
 	OK("arrayObject insert()");
 }
 
 
 void testArrayObjectSet() {
-	Array array1 = Array(10);
-	Object element1 = Object();
-	Object element2 = Object();
-	Object element3 = Object();
-	array1.set(0, element1);
-	array1.set(9, element2);
-	array1.set(4, element3);
-	t_true(array1.get(0).equals(element1));
-	t_true(array1.get(9).equals(element2));
-	t_true(array1.get(4).equals(element3));
+	Array* array1 = new Array(10);
+	Object* element1 = new Object();
+	Object* element2 = new Object();
+	Object* element3 = new Object();
+	array1->set(0, element1);
+	array1->set(9, element2);
+	array1->set(4, element3);
+	t_true(array1->get(0)->equals(element1));
+	t_true(array1->get(9)->equals(element2));
+	t_true(array1->get(4)->equals(element3));
+	delete array1;
+	delete element1;
+	delete element2;
+	delete element3;
 	OK("arrayObject set()");
 }
 
 
 void testArrayObjectRemove() {
-	Array array1 = Array(10);
-	Object element1 = Object();
-	Object element2 = Object();
-	Object element3 = Object();
-	array1.set(0, element1);
-	array1.set(9, element2);
-	array1.set(4, element3);
-	Object e1 = array1.remove(0);
-	Object e2 = array1.remove(8);
-	Object e3 = array1.remove(2);
-	t_true(e1.equals(element1));
-	t_true(e2.equals(element2));
-	t_true(e3.equals(element3));
+	Array* array1 = new Array(10);
+	Object* element1 = new Object();
+	Object* element2 = new Object();
+	Object* element3 = new Object();
+	array1->set(0, element1);
+	array1->set(9, element2);
+	array1->set(4, element3);
+	Object* e1 = array1->remove(0);
+	Object* e2 = array1->remove(8);
+	Object* e3 = array1->remove(2);
+	t_true(e1->equals(element1));
+	t_true(e2->equals(element2));
+	t_true(e3->equals(element3));
+	delete array1;
+	delete element1;
+	delete element2;
+	delete element3;
 	OK("arrayObject remove()");
 }
 
 
 void testArrayObjectGet() {
-	Array array1 = Array(10);
-	Object element1 = Object();
-	Object element2 = Object();
-	Object element3 = Object();
-	array1.set(0, element1);
-	array1.set(9, element2);
-	array1.set(4, element3);
-	Object e1 = array1.remove(0);
-	Object e2 = array1.remove(9);
-	Object e3 = array1.remove(4);
-	t_true(e1.equals(element1));
-	t_true(e2.equals(element2));
-	t_true(e3.equals(element3));
+	Array* array1 = new Array(10);
+	Object* element1 = new Object();
+	Object* element2 = new Object();
+	Object* element3 = new Object();
+	array1->set(0, element1);
+	array1->set(9, element2);
+	array1->set(4, element3);
+	Object* e1 = array1->remove(0);
+	Object* e2 = array1->remove(9);
+	Object* e3 = array1->remove(4);
+	t_true(e1->equals(element1));
+	t_true(e2->equals(element2));
+	t_true(e3->equals(element3));
+	delete array1;
+	delete element1;
+	delete element2;
+	delete element3;
 	OK("arrayObject get()");
 }
 
 
 void testArrayObjectSplit() {
-	Array array1 = Array(10);
-	Object element1 = Object();
-	Object element2 = Object();
-	Object element3 = Object();
-	array1.set(0, element1);
-	array1.set(9, element2);
-	array1.set(4, element3);
-	Object* array2 = array1.split(1);
-	t_true(array2.len() == 2);
-	t_true(array1.len() == 8);
-	t_true(array2.get(0).equals(element1));
-	t_true(array2.get(1).equals(element2));
-	t_true(array1.get(0).equals(element3));
+	Array* array1 = new Array(10);
+	Object* element1 = new Object();
+	Object* element2 = new Object();
+	Object* element3 = new Object();
+	array1->set(0, element1);
+	array1->set(9, element2);
+	array1->set(4, element3);
+	Array* array2 = array1->split(1);
+	t_true(array2->len() == 2);
+	t_true(array1->len() == 8);
+	t_true(array2->get(0)->equals(element1));
+	t_true(array2->get(1)->equals(element2));
+	t_true(array1->get(0)->equals(element3));
+	delete array1;
+	delete array2;
+	delete element1;
+	delete element2;
+	delete element3;
 	OK("arrayObject split()");
 }
 
 
 void testArrayObjectIsEmpty() {
-	Array array1 = Array(10);
-	Object element1 = Object();
-	Object element2 = Object();
-	t_true(array1.isEmpty());
-	array1.set(0, element1);
-	t_false(array1.isEmpty());
-	array1.set(9, element2);
-	t_false(array1.isEmpty());
-	array1.remove(0);
-	t_false(array1.isEmpty());
-	array1.remove(0);
-	t_true(array1.isEmpty());
+	Array* array1 = new Array(10);
+	Object* element1 = new Object();
+	Object* element2 = new Object();
+	t_true(array1->isEmpty());
+	array1->set(0, element1);
+	t_false(array1->isEmpty());
+	array1->set(9, element2);
+	t_false(array1->isEmpty());
+	array1->remove(0);
+	t_false(array1->isEmpty());
+	array1->remove(0);
+	t_true(array1->isEmpty());
+	delete array1;
+	delete element1;
+	delete element2;
 	OK("arrayObject isEmpty()");
 }
 
@@ -251,7 +296,7 @@ void testArrayIntegerConstructor() {
 
 void testArrayIntegerLen() {
 	IntArray array1 = IntArray(100);
-	t_true(arrar1.len() == 0);
+	t_true(array1.len() == 0);
 	Object o = Object();
 	array1.set(0, o);
 	t_true(array1.len() == 1);
@@ -459,7 +504,7 @@ void testArrayFloatConstructor() {
 
 void testArrayFloatLen() {
 	FloatArray array1 = FloatArray(100);
-	t_true(arrar1.len() == 0);
+	t_true(array1.len() == 0);
 	Object o = Object();
 	array1.set(0, o);
 	t_true(array1.len() == 1);
@@ -666,7 +711,7 @@ void testArrayBoolConstructor() {
 
 void testArrayBoolLen() {
 	BoolArray array1 = BoolArray((100);
-	t_true(arrar1.len() == 0);
+	t_true(array1.len() == 0);
 	Object o = Object();
 	array1.set(0, o);
 	t_true(array1.len() == 1);
@@ -866,190 +911,236 @@ void testBoolArray() {
  * STRING
  */
 void testArrayStringConstructor() {
-	StrArray array1 = StrArray();
-	StrArray array2 = StrArray(5000);
+	StrArray* array1 = new StrArray();
+	StrArray* array2 = new StrArray(5000);
+	delete array1;
+	delete array2;
 	OK("arrayString constructor()");
 }
 
 
 void testArrayStringLen() {
-	StrArray array1 = StrArray(1);
-	t_true(arrar1.len() == 0);
-	Object o = Object();
+	StrArray* array1 = new StrArray(1);
+	StrArray* array2 = new StrArray(5000);
+	t_true(array1->len() == 0);
+	Object* o = new Object();
 	array1->set(0, o);
-	t_true(arrar1.len() == 1);
+	t_true(array1->len() == 1);
+	delete o;
+	delete array1;
+	delete array2;
 	OK("arrayString len()");
 }
 
 
 void testArrayStringEqualArray() {
-	StrArray array1 = StrArray(10);
-	StrArray array2 = StrArray(10);
-	String element1 = String("a");
-	String element2 = String("b");
-	t_true(array1.equalArray(array2));
-	t_true(array2.equalArray(array1));
-	array1.set(0, element1);
-	t_false(array1.equalArray(array2));
-	t_false(array2.equalArary(array1));
-	array2.set(0, element1);
-	t_true(array1.equalArray(array2));
-	t_true(array2.equalArray(array1));
-	array2.set(1, element2);
-	t_false(array1.equalArray(array2));
-	t_false(array2.equalArary(array1));
-	array1.set(1, element2);
-	t_true(array1.equalArray(array2));
-	t_true(array2.equalArray(array1));
+	StrArray* array1 = new StrArray(10);
+	StrArray* array2 = new StrArray(10);
+	String* element1 = new String("a");
+	String* element2 = new String("b");
+	t_true(array1->equalArray(array2));
+	t_true(array2->equalArray(array1));
+	array1->set(0, element1);
+	t_false(array1->equalArray(array2));
+	t_false(array2->equalArary(array1));
+	array2->set(0, element1);
+	t_true(array1->equalArray(array2));
+	t_true(array2->equalArray(array1));
+	array2->set(1, element2);
+	t_false(array1->equalArray(array2));
+	t_false(array2->equalArary(array1));
+	array1->set(1, element2);
+	t_true(array1->equalArray(array2));
+	t_true(array2->equalArray(array1));
+	delete array1;
+	delete array2;
+	delete element1;
+	delete element2;
 	OK("arrayString equalArray()");
 }
 
 
 void testArrayStringElementAt() {
-	StrArray array1 = StrArray(10);
-	String element1 = String("a");
-	String element2 = String("b");
-	array1.set(0, element1);
-	array1.set(2, element2);
-	t_true(array1.get(0).equals(element1));
-	t_true(array1.get(2).equals(element2));
+	StrArray* array1 = new StrArray(10);
+	String* element1 = new String("a");
+	String* element2 = new String("b");
+	array1->set(0, element1);
+	array1->set(2, element2);
+	t_true(array1->get(0)->equals(element1));
+	t_true(array1->get(2)->equals(element2));
+	delete array1;
+	delete element1;
+	delete element2;
 	OK("arrayString elementAt()");
 }
 
 
 void testArrayStringIndexOf() {
-	StrArray array1 = StrArray(10);
-	String element1 = String("a");
-	String element2 = String("b");
-	String element3 = String("c");
-	array1.set(0, element1);
-	array1.set(2, element2);
-	t_true(array1.indexOf(element1) == 0);
-	t_true(array1.indexOf(element2) == 2);
-	t_true(array1.indexOf(element3) > 10);
+	StrArray* array1 = new StrArray(10);
+	String* element1 = new String("a");
+	String* element2 = new String("b");
+	String* element3 = new String("c");
+	array1->set(0, element1);
+	array1->set(2, element2);
+	t_true(array1->indexOf(element1) == 0);
+	t_true(array1->indexOf(element2) == 2);
+	t_true(array1->indexOf(element3) > 10);
+	delete array1;
+	delete element1;
+	delete element2;
+	delete element3;
 	OK("arrayString indexOf()");
 }
 
 
 void testArrayStringReplace() {
-	StrArray array1 = StrArray(10);
-	String element1 = String("a");
-	String element2 = String("b");
-	String element3 = String("c");
-	array1.set(0, element1);
-	array1.set(1, element2);
-	array1.replace(0, element3);
-	t_false(array1.get(0).equals(element1));
-	t_true(array1.get(0).equals(element3));
-	array1.replace(2, element1);
-	t_true(array1.get(2).equals(element1));
+	StrArray* array1 = new StrArray(10);
+	String* element1 = new String("a");
+	String* element2 = new String("b");
+	String* element3 = new String("c");
+	array1->set(0, element1);
+	array1->set(1, element2);
+	array1->replace(0, element3);
+	t_false(array1->get(0)->equals(element1));
+	t_true(array1->get(0)->equals(element3));
+	array1->replace(2, element1);
+	t_true(array1->get(2)->equals(element1));
+	delete array1;
+	delete element1;
+	delete element2;
+	delete element3;
 	OK("arrayString replace()");
 }
 
 
 void testArrayStringInsert() {
-	StrArray array1 = StrArray(10);
-	String element1 = String("a");
-	String element2 = String("b");
-	String element3 = String("c");
-	String element4 = String("d");
-	array1.set(0, element1);
-	array1.set(1, element2);
-	array1.insert(0, element3);
-	t_true(array1.get(0).equals(element3));
-	t_true(array1.get(1).equals(element1));
-	t_true(array1.get(2).equals(element2));
-	array1.insert(2, element4);
-	t_true(array1.get(0).equals(element3));
-	t_true(array1.get(1).equals(element1));
-	t_true(array1.get(2).equals(element4));
-	t_true(array1.get(3).equals(element2));
+	StrArray* array1 = new StrArray(10);
+	String* element1 = new String("a");
+	String* element2 = new String("b");
+	String* element3 = new String("c");
+	String* element4 = new String("d");
+	array1->set(0, element1);
+	array1->set(1, element2);
+	array1->insert(0, element3);
+	t_true(array1->get(0)->equals(element3));
+	t_true(array1->get(1)->equals(element1));
+	t_true(array1->get(2)->equals(element2));
+	array1->insert(2, element4);
+	t_true(array1->get(0)->equals(element3));
+	t_true(array1->get(1)->equals(element1));
+	t_true(array1->get(2)->equals(element4));
+	t_true(array1->get(3)->equals(element2));
+	delete array1;
+	delete element1;
+	delete element2;
+	delete element3;
+	delete element4;
 	OK("arrayString insert()");
 }
 
 
 void testArrayStringSet() {
-	StrArray array1 = StrArray(10);
-	String element1 = String("a");
-	String element2 = String("b");
-	String element3 = String("c");
-	array1.set(0, element1);
-	array1.set(9, element2);
-	array1.set(4, element3);
-	t_true(array1.get(0).equals(element1));
-	t_true(array1.get(9).equals(element2));
-	t_true(array1.get(4).equals(element3));
+	StrArray* array1 = new StrArray(10);
+	String* element1 = new String("a");
+	String* element2 = new String("b");
+	String* element3 = new String("c");
+	array1->set(0, element1);
+	array1->set(9, element2);
+	array1->set(4, element3);
+	t_true(array1->get(0)->equals(element1));
+	t_true(array1->get(9)->equals(element2));
+	t_true(array1->get(4)->equals(element3));
+	delete array1;
+	delete element1;
+	delete element2;
+	delete element3;
 	OK("arrayString set()");
 }
 
 
 void testArrayStringRemove() {
-	StrArray array1 = StrArray(10);
-	String element1 = String("a");
-	String element2 = String("b");
-	String element3 = String("c");
-	array1.set(0, element1);
-	array1.set(9, element2);
-	array1.set(4, element3);
-	String e1 = array1.remove(0);
-	String e2 = array1.remove(8);
-	String e3 = array1.remove(2);
-	t_true(e1.equals(element1));
-	t_true(e2.equals(element2));
-	t_true(e3.equals(element3));
+	StrArray* array1 = new StrArray(10);
+	String* element1 = new String("a");
+	String* element2 = new String("b");
+	String* element3 = new String("c");
+	array1->set(0, element1);
+	array1->set(9, element2);
+	array1->set(4, element3);
+	String* e1 = array1->remove(0);
+	String* e2 = array1->remove(8);
+	String* e3 = array1->remove(2);
+	t_true(e1->equals(element1));
+	t_true(e2->equals(element2));
+	t_true(e3->equals(element3));
+	delete array1;
+	delete element1;
+	delete element2;
+	delete element3;
 	OK("arrayString remove()");
 }
 
 
 void testArrayStringGet() {
-	StrArray array1 = StrArray(10);
-	String element1 = String("a");
-	String element2 = String("b");
-	String element3 = String("c");
-	array1.set(0, element1);
-	array1.set(9, element2);
-	array1.set(4, element3);
-	String e1 = array1.remove(0);
-	String e2 = array1.remove(9);
-	String e3 = array1.remove(4);
-	t_true(e1.equals(element1));
-	t_true(e2.equals(element2));
-	t_true(e3.equals(element3));
+	StrArray* array1 = new StrArray(10);
+	String* element1 = new String("a");
+	String* element2 = new String("b");
+	String* element3 = new String("c");
+	array1->set(0, element1);
+	array1->set(9, element2);
+	array1->set(4, element3);
+	String* e1 = array1->remove(0);
+	String* e2 = array1->remove(9);
+	String* e3 = array1->remove(4);
+	t_true(e1->equals(element1));
+	t_true(e2->equals(element2));
+	t_true(e3->equals(element3));
+	delete array1;
+	delete element1;
+	delete element2;
+	delete element3;
 	OK("arrayString get()");
 }
 
 
 void testArrayStringSplit() {
-	StrArray array1 = StrArray(10);
-	String element1 = String("a");
-	String element2 = String("b");
-	String element3 = String("c");
-	array1.set(0, element1);
-	array1.set(9, element2);
-	array1.set(4, element3);
-	String** array2 = array1.split(1);
-	t_true(array2.len() == 2);
-	t_true(array1.len() == 8);
-	t_true(array2.get(0).equals(element1));
-	t_true(array2.get(1).equals(element2));
-	t_true(array1.get(0).equals(element3));
+	StrArray* array1 = new StrArray(10);
+	String* element1 = new String("a");
+	String* element2 = new String("b");
+	String* element3 = new String("c");
+	array1->set(0, element1);
+	array1->set(9, element2);
+	array1->set(4, element3);
+	StrArray* array2 = array1->split(1);
+	t_true(array2->len() == 2);
+	t_true(array1->len() == 8);
+	t_true(array2->get(0)->equals(element1));
+	t_true(array2->get(1)->equals(element2));
+	t_true(array1->get(0)->equals(element3));
+	delete array1;
+	delete array2;
+	delete element1;
+	delete element2;
+	delete element3;
 	OK("arrayString split()");
 }
 
 
 void testArrayStringIsEmpty() {
-	StrArray array1 = StrArray(10);
-	String element1 = String("a");
-	String element2 = String("b");
-	t_true(array1.isEmpty());
-	array1.set(0, element1);
-	t_false(array1.isEmpty());
-	array1.set(9, element2);
-	t_false(array1.isEmpty());
-	array1.remove(0);
-	t_false(array1.isEmpty());
-	array1.remove(0);
-	t_true(array1.isEmpty());
+	StrArray* array1 = new StrArray(10);
+	String* element1 = new String("a");
+	String* element2 = new String("b");
+	t_true(array1->isEmpty());
+	array1->set(0, element1);
+	t_false(array1->isEmpty());
+	array1->set(9, element2);
+	t_false(array1->isEmpty());
+	array1->remove(0);
+	t_false(array1->isEmpty());
+	array1->remove(0);
+	t_true(array1->isEmpty());
+	delete array1;
+	delete element1;
+	delete element2;
 	OK("arrayString isEmpty()");
 }
 

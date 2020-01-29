@@ -49,7 +49,7 @@ class Array : public Object {
 		 * @param i the index of the element
 		 * @return the element of the array at the given index 
 		 */
-		virtual Object elementAt(size_t i) {
+		virtual Object* elementAt(size_t i) {
 		}
 
 
@@ -59,7 +59,7 @@ class Array : public Object {
 		 * @param element the object being search for
 		 * @return the index of the array or >size() if element not found
 		 */
-		virtual size_t indexOf(Object element) {
+		virtual size_t indexOf(Object* element) {
 		}
 
 
@@ -70,7 +70,7 @@ class Array : public Object {
 		 * @param element the element the element at index i is being replaced with
 		 * 
 		 */
-		virtual void replace(size_t i, Object element){
+		virtual void replace(size_t i, Object* element){
 		}
 
 
@@ -81,7 +81,7 @@ class Array : public Object {
 		 * @param i insertion index
 		 * @param element new element of the array at the given index
 		 */
-		virtual void insert(size_t i, Object element) {
+		virtual void insert(size_t i, Object* element) {
 		}
 
 
@@ -92,7 +92,7 @@ class Array : public Object {
 		 * @param i insertion index
 		 * @param element the element to be inserted at the given index
 		 */
-		virtual void set(size_t i, Object element) {
+		virtual void set(size_t i, Object* element) {
 		}
 
 
@@ -103,7 +103,7 @@ class Array : public Object {
 		 * @param i index of the element being removed
 		 * @return the object at the given index
 		 */
-		virtual Object remove(size_t i) {
+		virtual Object* remove(size_t i) {
 		}
 
 
@@ -113,7 +113,7 @@ class Array : public Object {
 		 * @param index the index of the element
 		 * @return the element of the array at the given index
 		 */
-		virtual Object get(size_t index) {
+		virtual Object* get(size_t index) {
 		}
 
 
@@ -124,7 +124,7 @@ class Array : public Object {
 		 * @param i - index
 		 * @return Array 1 (the first one)
 		 */
-		virtual Object* split(size_t i) {
+		virtual Array* split(size_t i) {
 		}
 
 
@@ -582,7 +582,7 @@ class StrArray : public Object {
 		 * @param i the index of the element
 		 * @return the element of the array at the given index 
 		 */
-		virtual String elementAt(size_t i) {
+		virtual String* elementAt(size_t i) {
 		}
 
 
@@ -592,7 +592,7 @@ class StrArray : public Object {
 		 * @param element the object being search for
 		 * @return the index of the array or >size() if element not found
 		 */
-		virtual size_t indexOf(String element) {
+		virtual size_t indexOf(String* element) {
 		}
 
 
@@ -603,7 +603,7 @@ class StrArray : public Object {
 		 * @param element the element the element at index i is being replaced with
 		 * 
 		 */
-		virtual void replace(size_t i, String element){
+		virtual void replace(size_t i, String* element){
 		}
 
 
@@ -614,7 +614,7 @@ class StrArray : public Object {
 		 * @param i insertion index
 		 * @param element new element of the array at the given index
 		 */
-		virtual void insert(size_t i, String element) {
+		virtual void insert(size_t i, String* element) {
 		}
 
 
@@ -625,7 +625,7 @@ class StrArray : public Object {
 		 * @param i insertion index
 		 * @param element the element to be inserted at the given index
 		 */
-		virtual void set(size_t i, String element) {
+		virtual void set(size_t i, String* element) {
 		}
 
 
@@ -636,7 +636,7 @@ class StrArray : public Object {
 		 * @param i index of the element being removed
 		 * @return the element at the given index
 		 */
-		virtual String remove(size_t i) {
+		virtual String* remove(size_t i) {
 		}
 
 
@@ -646,7 +646,7 @@ class StrArray : public Object {
 		 * @param index the index of the element
 		 * @return the element of the array at the given index
 		 */
-		virtual String get(size_t index) {
+		virtual String* get(size_t index) {
 		}
 
 
@@ -657,7 +657,7 @@ class StrArray : public Object {
 		 * @param i index
 		 * @return Array 1 (the first one)
 		 */
-		virtual String* split(size_t i) {
+		virtual StrArray* split(size_t i) {
 		}
 
 
