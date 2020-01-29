@@ -44,16 +44,6 @@ class Array : public Object {
 
 
 		/**
-		 * Checks whether the given array is equal to this array.
-		 * 
-		 * @param arr2 the second array
-		 * @return true if this array is equal to the given array and false otherwise
-		 */
-		virtual bool equalArray(Object* arr2) {
-		}
-
-
-		/**
 		 * Function to return the element at the given index.
 		 * 
 		 * @param i the index of the element
@@ -184,16 +174,6 @@ class IntArray : public Object {
 		 * @return the number of elements of this array
 		*/ 
 		virtual size_t len() {
-		}
-
-
-		/**
-		 * Checks whether the given array is equal to this array.
-		 * 
-		 * @param arr2 the second array
-		 * @return true if this array is equal to the given array and false otherwise
-		 */
-		virtual bool equalArray(int* arr2) {
 		}
 
 
@@ -332,16 +312,6 @@ class BoolArray : public Object {
 
 
 		/**
-		 * Checks whether the given array is equal to this array.
-		 * 
-		 * @param arr2 the second array
-		 * @return true if this array is equal to the given array and false otherwise
-		 */
-		virtual bool equalArray(bool* arr2) {
-		}
-
-
-		/**
 		 * Function to return the element at the given index.
 		 * 
 		 * @param i the index of the element
@@ -476,16 +446,6 @@ class FloatArray : public Object {
 
 
 		/**
-		 * Checks whether the given array is equal to this array.
-		 * 
-		 * @param arr2 the second array
-		 * @return true if this array is equal to the given array and false otherwise
-		 */
-		virtual bool equalArray(float* arr2) {
-		}
-
-
-		/**
 		 * Function to return the element at the given index.
 		 * 
 		 * @param i the index of the element
@@ -613,16 +573,6 @@ class StrArray : public Object {
 		 * @return the number of elements of this array
 		*/ 
 		virtual size_t len() {
-		}
-
-
-		/**
-		 * Checks whether the given array is equal to this array.
-		 * 
-		 * @param arr2 the second array
-		 * @return true if this array is equal to the given array and false otherwise
-		 */
-		virtual bool equalArray(String* arr2) {
 		}
 
 
