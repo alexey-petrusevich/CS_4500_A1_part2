@@ -146,7 +146,7 @@ void testArrayObjectRemove() {
     array1->pushBack(string2);
     t_true(array1->get(0)->equals(string1));
     t_true(array1->len() == 2);
-    String* s1 = array1->remove(0);
+    Object* s1 = array1->remove(0);
     t_true(s1->equals(string1));
     t_true(array1->len() == 1);
     t_true(array1->get(0)->equals(string2));
@@ -188,9 +188,9 @@ void testArrayObjectIsEmpty() {
     array1->pushBack(string1);
     t_false(array1->isEmpty());
     array1->pushBack(string2);
-    String* s1 = array1->remove(0);
+    Object* s1 = array1->remove(0);
     t_false(array1->isEmpty());
-    String* s2 = array1->remove(0);
+    Object* s2 = array1->remove(0);
     t_true(array1->isEmpty());
     delete s1;
     delete s2;
@@ -201,7 +201,6 @@ void testArrayObjectIsEmpty() {
 void testObjectArray() {
     testArrayObjectConstructor();
     testArrayObjectLen();
-    testArrayObjectElementAt();
     testArrayObjectIndexOf();
     testArrayObjectReplace();
     testArrayObjectInsert();
@@ -211,7 +210,6 @@ void testObjectArray() {
     testArrayObjectSplit();
     testArrayObjectIsEmpty();
 }
-
 
 /*
  * INTEGER
