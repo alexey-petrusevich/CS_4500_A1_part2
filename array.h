@@ -44,18 +44,6 @@ class Array : public Object {
 
 
 		/**
-		 * Function to return the element at the given index.
-		 * Throws an error if index is out of bounds.
-		 * 
-		 * @param i the index of the element
-		 * @return the element of the array at the given index
-		 *
-		 */
-		virtual Object* elementAt(size_t i) {
-		}
-
-
-		/**
 		 * Function to return the first index where the element exists.
 		 * 
 		 * @param element the object being search for
@@ -146,6 +134,15 @@ class Array : public Object {
 
 
 		/**
+		 * Pushes the given item to the end of this array.
+		 *
+		 * @param item the given item to be added to the end of this array
+		 */
+		virtual void pushBack(Object* item) {
+		}
+
+
+		/**
 		 * The destructor of this array.
 		 */
 		virtual ~Array() {
@@ -182,17 +179,6 @@ class IntArray : public Object {
 		 * @return the number of elements of this array
 		*/ 
 		virtual size_t len() {
-		}
-
-
-		/**
-		 * Function to return the element at the given index.
-		 * Throws an error if index is out of bounds.
-		 * 
-		 * @param i the index of the element
-		 * @return the element of the array at the given index 
-		 */
-		virtual int elementAt(size_t i) {
 		}
 
 
@@ -287,6 +273,15 @@ class IntArray : public Object {
 
 
 		/**
+		 * Pushes the given item to the end of this array.
+		 *
+		 * @param item the given item to be added to the end of this array
+		 */
+		virtual void pushBack(int item) {
+		}
+
+
+		/**
 		 * The destructor of this array.
 		 */
 		virtual ~IntArray() {
@@ -323,17 +318,6 @@ class BoolArray : public Object {
 		 * @return the number of elements of this array
 		*/ 
 		virtual size_t len() {
-		}
-
-
-		/**
-		 * Function to return the element at the given index.
-		 * Throws an error if index is out of bounds.
-		 * 
-		 * @param i the index of the element
-		 * @return the element of the array at the given index 
-		 */
-		virtual bool elementAt(size_t i) {
 		}
 
 
@@ -428,6 +412,15 @@ class BoolArray : public Object {
 
 
 		/**
+		 * Pushes the given item to the end of this array.
+		 *
+		 * @param item the given item to be added to the end of this array
+		 */
+		virtual void pushBack(bool item) {
+		}
+
+
+		/**
 		 * Destructor for this array.
 		 */
 		~BoolArray() {
@@ -464,17 +457,6 @@ class FloatArray : public Object {
 		 * @return the number of elements of this array
 		*/ 
 		virtual size_t len() {
-		}
-
-
-		/**
-		 * Function to return the element at the given index.
-		 * Throws an error if index is out of bounds.
-		 * 
-		 * @param i the index of the element
-		 * @return the element of the array at the given index 
-		 */
-		virtual float elementAt(size_t i) {
 		}
 
 
@@ -566,6 +548,16 @@ class FloatArray : public Object {
 		virtual bool isEmpty() {
 		}
 
+
+		/**
+		 * Pushes the given item to the end of this array.
+		 *
+		 * @param item the given item to be added to the end of this array
+		 */
+		virtual void pushBack(float item) {
+		}
+
+
 		/**
 		 * Destructor for this array.
 		 */
@@ -601,17 +593,6 @@ class StrArray : public Object {
 		 * @return the number of elements of this array
 		*/ 
 		virtual size_t len() {
-		}
-
-
-		/**
-		 * Function to return the element at the given index.
-		 * Throws an error if index is out of bounds.
-		 * 
-		 * @param i the index of the element
-		 * @return the element of the array at the given index 
-		 */
-		virtual String* elementAt(size_t i) {
 		}
 
 
@@ -702,6 +683,15 @@ class StrArray : public Object {
 		 * @return true if this array is empty and false otherwise
 		 */
 		virtual bool isEmpty() {
+		}
+
+
+		/**
+		 * Pushes the given item to the end of this array.
+		 *
+		 * @param item the given item to be added to the end of this array
+		 */
+		virtual void pushBack(String* item) {
 		}
 
 
