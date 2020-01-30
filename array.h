@@ -574,7 +574,7 @@ class StrArray : public Object {
 		/**
 		 * Default constructor of this array.
 		 */
-		StrArray() : Array() {
+		StrArray() : Object() {
 		}
 
 
