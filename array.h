@@ -45,9 +45,11 @@ class Array : public Object {
 
 		/**
 		 * Function to return the element at the given index.
+		 * Throws an error if index is out of bounds.
 		 * 
 		 * @param i the index of the element
-		 * @return the element of the array at the given index 
+		 * @return the element of the array at the given index
+		 *
 		 */
 		virtual Object* elementAt(size_t i) {
 		}
@@ -65,6 +67,7 @@ class Array : public Object {
 
 		/**
 		 * Function to replace the element at the index with another element.
+		 * Throws an error if index is out of bounds.
 		 * 
 		 * @param i index of the element 
 		 * @param element the element the element at index i is being replaced with
@@ -77,6 +80,7 @@ class Array : public Object {
 		/**
 		 * Function to insert an element at index i and shift all other 
 		 * elements to the right by increasing the array size by 1.
+		 * Throws an error if index is out of bounds.
 		 * 
 		 * @param i insertion index
 		 * @param element new element of the array at the given index
@@ -88,6 +92,7 @@ class Array : public Object {
 		/**
 		 * Set the element of the array at the given index 
 		 * with the given element.
+		 * Throws an error if index is out of bounds.
 		 *
 		 * @param i insertion index
 		 * @param element the element to be inserted at the given index
@@ -99,6 +104,7 @@ class Array : public Object {
 		/**
 		 * Function to remove the element at index and shift remaining elements to the left,
 		 * decreasing the array size by 1.
+		 * Throws an error if index is out of bounds.
 		 * 
 		 * @param i index of the element being removed
 		 * @return the object at the given index
@@ -109,6 +115,7 @@ class Array : public Object {
 
 		/**
 		 * Returns an element at the given index.
+		 * Throws an error if index is out of bounds.
 		 *
 		 * @param index the index of the element
 		 * @return the element of the array at the given index
@@ -120,6 +127,7 @@ class Array : public Object {
 		/**
 		 * Function to split the array into two different arrays and returns
 		 * the first half based on index Array = Array 1 + Array 2.
+		 * Throws an error if index is out of bounds.
 		 *
 		 * @param i - index
 		 * @return Array 1 (the first one)
@@ -179,6 +187,7 @@ class IntArray : public Object {
 
 		/**
 		 * Function to return the element at the given index.
+		 * Throws an error if index is out of bounds.
 		 * 
 		 * @param i the index of the element
 		 * @return the element of the array at the given index 
@@ -199,6 +208,7 @@ class IntArray : public Object {
 
 		/**
 		 * Function to replace the element at the index with another element.
+		 * Throws an error if index is out of bounds.
 		 * 
 		 * @param i index of the element 
 		 * @param element the element the element at index i is being replaced with
@@ -211,6 +221,7 @@ class IntArray : public Object {
 		/**
 		 * Function to insert an element at index i and shift all other 
 		 * elements to the right by increasing the array size by 1.
+		 * Throws an error if index is out of bounds.
 		 * 
 		 * @param i insertion index
 		 * @param element new element of the array at the given index
@@ -222,6 +233,7 @@ class IntArray : public Object {
 		/**
 		 * Set the element of the array at the given index 
 		 * with the given element.
+		 * Throws an error if index is out of bounds.
 		 *
 		 * @param i insertion index
 		 * @param element the element to be inserted at the given index
@@ -233,6 +245,7 @@ class IntArray : public Object {
 		/**
 		 * Function to remove the element at index and shift remaining elements to the left,
 		 * decreasing the array size by 1.
+		 * Throws an error if index is out of bounds.
 		 * 
 		 * @param i index of the element being removed
 		 * @return the element at the given index
@@ -243,6 +256,7 @@ class IntArray : public Object {
 
 		/**
 		 * Returns an element at the given index.
+		 * Throws an error if index is out of bounds.
 		 *
 		 * @param index the index of the element
 		 * @return the element of the array at the given index
@@ -254,11 +268,12 @@ class IntArray : public Object {
 		/**
 		 * Function to split the array into two different arrays and returns
 		 * the first half based on index Array = Array 1 + Array 2.
+		 * Throws an error if index is out of bounds.
 		 *
 		 * @param i index
 		 * @return Array 1 (the first one)
 		 */
-		virtual int* split(size_t i) {
+		virtual IntArray* split(size_t i) {
 		}
 
 
@@ -313,6 +328,7 @@ class BoolArray : public Object {
 
 		/**
 		 * Function to return the element at the given index.
+		 * Throws an error if index is out of bounds.
 		 * 
 		 * @param i the index of the element
 		 * @return the element of the array at the given index 
@@ -333,6 +349,7 @@ class BoolArray : public Object {
 
 		/**
 		 * Function to replace the element at the index with another element.
+		 * Throws an error if index is out of bounds.
 		 * 
 		 * @param i index of the element 
 		 * @param element the element the element at index i is being replaced with
@@ -345,6 +362,7 @@ class BoolArray : public Object {
 		/**
 		 * Function to insert an element at index i and shift all other 
 		 * elements to the right by increasing the array size by 1.
+		 * Throws an error if index is out of bounds.
 		 * 
 		 * @param i insertion index
 		 * @param element new element of the array at the given index
@@ -356,6 +374,7 @@ class BoolArray : public Object {
 		/**
 		 * Set the element of the array at the given index 
 		 * with the given element.
+		 * Throws an error if index is out of bounds.
 		 *
 		 * @param i insertion index
 		 * @param element the element to be inserted at the given index
@@ -367,6 +386,7 @@ class BoolArray : public Object {
 		/**
 		 * Function to remove the element at index and shift remaining elements to the left,
 		 * decreasing the array size by 1.
+		 * Throws an error if index is out of bounds.
 		 * 
 		 * @param i index of the element being removed
 		 * @return the element at the given index
@@ -377,6 +397,7 @@ class BoolArray : public Object {
 
 		/**
 		 * Returns an element at the given index.
+		 * Throws an error if index is out of bounds.
 		 *
 		 * @param index the index of the element
 		 * @return the element of the array at the given index
@@ -388,11 +409,12 @@ class BoolArray : public Object {
 		/**
 		 * Function to split the array into two different arrays and returns
 		 * the first half based on index Array = Array 1 + Array 2.
+		 * Throws an error if index is out of bounds.
 		 *
 		 * @param i index
 		 * @return Array 1 (the first one)
 		 */
-		virtual bool* split(size_t i) {
+		virtual BoolArray* split(size_t i) {
 		}
 
 
@@ -447,6 +469,7 @@ class FloatArray : public Object {
 
 		/**
 		 * Function to return the element at the given index.
+		 * Throws an error if index is out of bounds.
 		 * 
 		 * @param i the index of the element
 		 * @return the element of the array at the given index 
@@ -467,6 +490,7 @@ class FloatArray : public Object {
 
 		/**
 		 * Function to replace the element at the index with another element.
+		 * Throws an error if index is out of bounds.
 		 * 
 		 * @param i index of the element 
 		 * @param element the element the element at index i is being replaced with
@@ -490,6 +514,7 @@ class FloatArray : public Object {
 		/**
 		 * Set the element of the array at the given index 
 		 * with the given element.
+		 * Throws an error if index is out of bounds.
 		 *
 		 * @param i insertion index
 		 * @param element the element to be inserted at the given index
@@ -501,6 +526,7 @@ class FloatArray : public Object {
 		/**
 		 * Function to remove the element at index and shift remaining elements to the left,
 		 * decreasing the array size by 1.
+		 * Throws an error if index is out of bounds.
 		 * 
 		 * @param i index of the element being removed
 		 * @return the element at the given index
@@ -511,6 +537,7 @@ class FloatArray : public Object {
 
 		/**
 		 * Returns an element at the given index.
+		 * Throws an error if index is out of bounds.
 		 *
 		 * @param index the index of the element
 		 * @return the element of the array at the given index
@@ -522,11 +549,12 @@ class FloatArray : public Object {
 		/**
 		 * Function to split the array into two different arrays and returns
 		 * the first half based on index Array = Array 1 + Array 2.
+		 * Throws an error if index is out of bounds.
 		 *
 		 * @param i index
 		 * @return Array 1 (the first one)
 		 */
-		virtual float* split(size_t i) {
+		virtual FloatArray* split(size_t i) {
 		}
 
 
@@ -563,7 +591,7 @@ class StrArray : public Object {
 		 *
 		* @param size the base size of this array
 		*/
-		StrArray(size_t size) : Array(size) {
+		StrArray(size_t size) : Object() {
 		}
 
 
@@ -578,6 +606,7 @@ class StrArray : public Object {
 
 		/**
 		 * Function to return the element at the given index.
+		 * Throws an error if index is out of bounds.
 		 * 
 		 * @param i the index of the element
 		 * @return the element of the array at the given index 
@@ -598,6 +627,7 @@ class StrArray : public Object {
 
 		/**
 		 * Function to replace the element at the index with another element.
+		 * Throws an error if index is out of bounds.
 		 * 
 		 * @param i index of the element 
 		 * @param element the element the element at index i is being replaced with
@@ -610,6 +640,7 @@ class StrArray : public Object {
 		/**
 		 * Function to insert an element at index i and shift all other 
 		 * elements to the right by increasing the array size by 1.
+		 * Throws an error if index is out of bounds.
 		 * 
 		 * @param i insertion index
 		 * @param element new element of the array at the given index
@@ -621,6 +652,7 @@ class StrArray : public Object {
 		/**
 		 * Set the element of the array at the given index 
 		 * with the given element.
+		 * Throws an error if index is out of bounds.
 		 *
 		 * @param i insertion index
 		 * @param element the element to be inserted at the given index
@@ -632,6 +664,7 @@ class StrArray : public Object {
 		/**
 		 * Function to remove the element at index and shift remaining elements to the left,
 		 * decreasing the array size by 1.
+		 * Throws an error if index is out of bounds.
 		 * 
 		 * @param i index of the element being removed
 		 * @return the element at the given index
@@ -642,6 +675,7 @@ class StrArray : public Object {
 
 		/**
 		 * Returns an element at the given index.
+		 * Throws an error if index is out of bounds.
 		 *
 		 * @param index the index of the element
 		 * @return the element of the array at the given index
@@ -653,6 +687,7 @@ class StrArray : public Object {
 		/**
 		 * Function to split the array into two different arrays and returns
 		 * the first half based on index Array = Array 1 + Array 2.
+		 * Throws an error if index is out of bounds.
 		 *
 		 * @param i index
 		 * @return Array 1 (the first one)
