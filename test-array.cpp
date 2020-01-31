@@ -3,7 +3,6 @@
 #include <cmath>
 #include <cfloat>
 #include "array.h"
-#include "string.h"
 
 /*
  * HELPERS
@@ -31,6 +30,7 @@ void t_false(bool p) {
         FAIL();
     }
 }
+
 
 String* string1;
 String* string2;
@@ -122,136 +122,204 @@ void testArrayObjectConstructor() {
 
 
 void testArrayObjectLen() {
-    setup();
+    Array* array1 = new Array(1);
+    Array* array2 = new Array(5000);
     t_true(array1->len() == 0);
-    array1->pushBack(string1);
     t_true(array2->len() == 0);
-    t_true(array1->len() == 1);
-    teardown();
+    delete array1;
+    delete array2;
     OK("arrayObject len()");
+}
+
+void testArrayObjectElementAt() {
+    Array* array1 = new Array(10);
+    Object* element1 = new Object();
+    Object* element2 = new Object();
+    array1->set(0, element1);
+    array1->set(2, element2);
+    t_true(array1->get(0)->equals(element1));
+    t_true(array1->get(2)->equals(element2));
+    delete array1;
+    delete element1;
+    delete element2;
+    OK("arrayObject elementAt()");
 }
 
 
 void testArrayObjectIndexOf() {
-    setup();
-    array3->pushBack(string1);
-    array3->pushBack(string2);
-    t_true(array3->indexOf(string1) == 0);
-    t_true(array3->indexOf(string2) == 1);
-    t_true(array3->len() == 2);
-    t_true(array3->indexOf(string3) > 2);
-    teardown();
+    Array* array1 = new Array(10);
+    Object* element1 = new Object();
+    Object* element2 = new Object();
+    Object* element3 = new Object();
+    array1->set(0, element1);
+    array1->set(2, element2);
+    t_true(array1->indexOf(element1) == 0);
+    t_true(array1->indexOf(element2) == 2);
+    t_true(array1->indexOf(element3) > 2);
+    delete array1;
+    delete element1;
+    delete element2;
+    delete element3;
     OK("arrayObject indexOf()");
 }
 
 
 void testArrayObjectReplace() {
-    setup();
-    array1->pushBack(string1);
-    array1->pushBack(string2);
-    array1->replace(0, string3);
-    t_false(array1->get(0)->equals(string1));
-    t_true(array1->get(0)->equals(string3));
-    array1->replace(1, string1);
-    t_true(array1->get(1)->equals(string1));
-    teardown();
+    Array* array1 = new Array(10);
+    Object* element1 = new Object();
+    Object* element2 = new Object();
+    Object* element3 = new Object();
+    array1->set(0, element1);
+    array1->set(1, element2);
+    array1->replace(0, element3);
+    t_false(array1->get(0)->equals(element1));
+    t_true(array1->get(0)->equals(element3));
+    array1->replace(2, element1);
+    t_true(array1->get(2)->equals(element1));
+    delete array1;
+    delete element1;
+    delete element2;
+    delete element3;
     OK("arrayObject replace()");
 }
 
 
 void testArrayObjectInsert() {
-    setup();
-    array1->insert(0, string1);
-    t_true(array1->len() == 1);
-    t_true(array1->get(0)->equals(string1));
-    array1->insert(0, string2);
-    t_true(array1->len() == 2);
-    t_true(array1->get(0)->equals(string2));
-    t_true(array1->get(1)->equals(string1));
-    array1->insert(2, string3);
-    t_true(array1->get(0)->equals(string2));
-    t_true(array1->get(1)->equals(string1));
-    t_true(array1->get(2)->equals(string3));
-    teardown();
+    Array* array1 = new Array(10);
+    Object* element1 = new Object();
+    Object* element2 = new Object();
+    Object* element3 = new Object();
+    Object* element4 = new Object();
+    array1->set(0, element1);
+    array1->set(1, element2);
+    array1->insert(0, element3);
+    t_true(array1->get(0)->equals(element3));
+    t_true(array1->get(1)->equals(element1));
+    t_true(array1->get(2)->equals(element2));
+    array1->insert(2, element4);
+    t_true(array1->get(0)->equals(element3));
+    t_true(array1->get(1)->equals(element1));
+    t_true(array1->get(2)->equals(element4));
+    t_true(array1->get(3)->equals(element2));
+    delete array1;
+    delete element1;
+    delete element2;
+    delete element3;
+    delete element4;
     OK("arrayObject insert()");
 }
 
 
 void testArrayObjectSet() {
-    setup();
-    array1->pushBack(string1);
-    t_true(array1->get(0)->equals(string1));
-    array1->set(0, string2);
-    t_true(array1->get(0)->equals(string2));
-    t_true(array1->len() == 1);
-    teardown();
+    Array* array1 = new Array(10);
+    Object* element1 = new Object();
+    Object* element2 = new Object();
+    Object* element3 = new Object();
+    array1->set(0, element1);
+    array1->set(9, element2);
+    array1->set(4, element3);
+    t_true(array1->get(0)->equals(element1));
+    t_true(array1->get(9)->equals(element2));
+    t_true(array1->get(4)->equals(element3));
+    delete array1;
+    delete element1;
+    delete element2;
+    delete element3;
     OK("arrayObject set()");
 }
 
 
 void testArrayObjectRemove() {
-    setup();
-    array1->pushBack(string1);
-    array1->pushBack(string2);
-    t_true(array1->get(0)->equals(string1));
-    t_true(array1->len() == 2);
-    Object* s1 = array1->remove(0);
-    t_true(s1->equals(string1));
-    t_true(array1->len() == 1);
-    t_true(array1->get(0)->equals(string2));
-    delete s1;
-    teardown();
+    Array* array1 = new Array(10);
+    Object* element1 = new Object();
+    Object* element2 = new Object();
+    Object* element3 = new Object();
+    array1->set(0, element1);
+    array1->set(9, element2);
+    array1->set(4, element3);
+    Object* e1 = array1->remove(0);
+    Object* e2 = array1->remove(8);
+    Object* e3 = array1->remove(3);
+    t_true(e1->equals(element1));
+    t_true(e2->equals(element2));
+    t_true(e3->equals(element3));
+    delete array1;
+    delete element1;
+    delete element2;
+    delete element3;
     OK("arrayObject remove()");
 }
 
 
 void testArrayObjectGet() {
-    setup();
-    array1->pushBack(string1);
-    array1->pushBack(string2);
-    t_true(array1->get(0)->equals(string1));
-    t_true(array1->get(1)->equals(string2));
-    teardown();
+    Array* array1 = new Array(10);
+    Object* element1 = new Object();
+    Object* element2 = new Object();
+    Object* element3 = new Object();
+    array1->set(0, element1);
+    array1->set(9, element2);
+    array1->set(4, element3);
+    Object* e1 = array1->get(0);
+    Object* e2 = array1->get(9);
+    Object* e3 = array1->get(4);
+    t_true(e1->equals(element1));
+    t_true(e2->equals(element2));
+    t_true(e3->equals(element3));
+    delete array1;
+    delete element1;
+    delete element2;
+    delete element3;
     OK("arrayObject get()");
 }
 
 
 void testArrayObjectSplit() {
-    setup();
-    array1->pushBack(string1);
-    array1->pushBack(string2);
-    array1->pushBack(string3);
-    Array* a1 = array1->split(1);
-    t_true(a1->len() == 1);
+    Array* array1 = new Array(10);
+    Object* element1 = new Object();
+    Object* element2 = new Object();
+    Object* element3 = new Object();
+    array1->set(0, element1);
+    array1->set(9, element2);
+    array1->set(4, element3);
+    Array* array2 = array1->split(1);
+    t_true(array2->len() == 1);
     t_true(array1->len() == 2);
-    t_true(a1->get(0)->equals(string1));
-    t_true(array1->get(0)->equals(string2));
-    t_true(array1->get(1)->equals(string3));
-    delete a1;
-    teardown();
+    t_true(array2->get(0)->equals(element1));
+    t_true(array1->get(7)->equals(element2));
+    t_true(array1->get(2)->equals(element3));
+    delete array1;
+    delete array2;
+    delete element1;
+    delete element2;
+    delete element3;
     OK("arrayObject split()");
 }
 
 
 void testArrayObjectIsEmpty() {
-    setup();
+    Array* array1 = new Array(10);
+    Object* element1 = new Object();
+    Object* element2 = new Object();
     t_true(array1->isEmpty());
-    array1->pushBack(string1);
+    array1->set(0, element1);
     t_false(array1->isEmpty());
-    array1->pushBack(string2);
-    Object* s1 = array1->remove(0);
+    array1->set(9, element2);
     t_false(array1->isEmpty());
-    Object* s2 = array1->remove(0);
+    array1->remove(0);
+    t_false(array1->isEmpty());
+    array1->remove(8);
     t_true(array1->isEmpty());
-    delete s1;
-    delete s2;
-    teardown();
+    delete array1;
+    delete element1;
+    delete element2;
     OK("arrayObject isEmpty()");
 }
+
 
 void testObjectArray() {
     testArrayObjectConstructor();
     testArrayObjectLen();
+    testArrayObjectElementAt();
     testArrayObjectIndexOf();
     testArrayObjectReplace();
     testArrayObjectInsert();
@@ -275,6 +343,7 @@ void testArrayIntegerConstructor() {
 
 
 void testArrayIntegerLen() {
+
     setup();
     t_true(ia1->len() == 0);
     ia1->pushBack(1);
@@ -283,6 +352,7 @@ void testArrayIntegerLen() {
     teardown();
     OK("arrayInt len()");
 }
+
 
 
 void testArrayIntegerIndexOf() {
@@ -412,8 +482,6 @@ void testIntegerArray() {
     testArrayIntegerSplit();
     testArrayIntegerIsEmpty();
 }
-
-
 
 /*
  * FLOAT
@@ -588,6 +656,7 @@ void testArrayBoolLen() {
     teardown();
     OK("arrayBool len()");
 }
+
 
 
 void testArrayBoolIndexOf() {
